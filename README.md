@@ -1,5 +1,10 @@
-# ELS-HMM — a method to detect ancient sweeps based on a signal of extended lineage sorting
-ELS-HMM is a hidden Markov model that detects long regions in which an outgroup falls outside of the variation of a large number of individuals from another group. The model has been used to detect ancient selective sweeps on the human lineage after the split from archaics by using the Neandertal and Denisovan genome as outgroup genomes.
+# ELS-hmm — a method to detect ancient sweeps based on a signal of extended lineage sorting
+ELS-hmm is a hidden Markov model that detects long regions in which an outgroup falls outside of the variation of a large number of individuals from another group. The model has been used to detect ancient selective sweeps on the human lineage after the split from archaics by using the Neandertal and Denisovan genome as outgroup genomes.
+
+## Installation
+To compile the software, just type:
+```make```
+Note that this is an early release and a more polished and better documented version is currently being prepared for release. The software uses [nlopt](http://ab-initio.mit.edu/wiki/index.php/NLopt) for maximizing the likelihood and a development version needs to be installed to compile ELS-hmm. The software has been tested on Linux.
 
 ## Input Format
 To configurate the emission probabilities that the outgroup individual share the derived allele at a site segregating in the other population, a tab-separated file is required specifying on each line the number of derived alleles in the population followed by the probability:
