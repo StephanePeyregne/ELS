@@ -3,12 +3,13 @@ ELS-HMM is a hidden Markov model that detects long regions in which an outgroup 
 
 ## Input Format
 To configurate the emission probabilities that the outgroup individual share the derived allele at a site segregating in the other population, a tab-separated file is required specifying on each line the number of derived alleles in the population followed by the probability:
+
 Number of derived alleles | Probability of the outgroup to be derived
 ------------------------- | -----------------------------------------
 1 | 0.0168473
 2 | 0.0188793
 3 | 0.0225382
-       ...
+... | ...
 370 | 10.825273
 
 Probabilities of sharing at fixed sites are provided through the command line with the other parameters of the model.
