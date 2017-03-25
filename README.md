@@ -10,7 +10,7 @@ Number of derived alleles | Probability of the outgroup to be derived
 2 | 0.0188793
 3 | 0.0225382
 ... | ...
-370 | 10.825273
+n-1 | 0.825273
 
 Probabilities of sharing at fixed sites are provided through the command line with the other parameters of the model.
 
