@@ -28,12 +28,19 @@ Note that this version allow you to run the model on only one chromosome at a ti
 ## Examples of command line
 
 For the 3-state model (with selection and parameter estimation):
-- hmm -e config-file -L 100000 -l 15000 -S 200000 -r 0.1 -F 0.99 -f 0.95 -N 0.0001 (-o log-file) input > output
+```
+hmm -e config-file -L 100000 -l 15000 -S 200000 -r 0.1 -F 0.99 -f 0.95 -N 0.0001 (-o log-file) input > output
+```
 The optional switch -o allows you to define the name of the log file which follows the steps of the hill-climbing algorithm, returning the log-likelihood and the associated values of the parameters. Otherwise, if you estimate parameters, this file will be named convergence.log.
 
 For the 2-state model:
-- hmm -e config-file -L 100000 -l 15000 -F 0.99 -f 0.95 -B 0.0001 input > output
-
+```
+hmm -e config-file -L 100000 -l 15000 -F 0.99 -f 0.95 -B 0.0001 input > output
+```
 You can also run the HMM without any parameter estimation:
-- hmm -e config-file -L 100000 -l 15000 -S 200000 -r 0.1 -F 0.99 -f 0.95 input > output
-- hmm -e config-file -L 100000 -l 15000 -F 0.99 -f 0.95 input > output
+```
+hmm -e config-file -L 100000 -l 15000 -S 200000 -r 0.1 -F 0.99 -f 0.95 input > output
+```
+```
+hmm -e config-file -L 100000 -l 15000 -F 0.99 -f 0.95 input > output
+```
