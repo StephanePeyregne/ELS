@@ -90,3 +90,10 @@ hmm -e config-file -L 100000 -l 15000 -S 200000 -r 0.1 -F 0.99 -f 0.95 input > o
 ```
 hmm -e config-file -L 100000 -l 15000 -F 0.99 -f 0.95 input > output
 ```
+### Output format
+
+The software returns the input file with 2 or 3 additional columns (depending on the model used). The first additional column takes values of 0,1 and 2 if the probability of the external state or ELS state is above 0.8 at this site (represented as 1 and 2 respectively, 0 otherwise). The two following columns report the probability of the external state and ELS state at this site. The probability of the internal state can be calculated by substracting those probabilities to 1.
+
+### Citation
+
+The method is described in the following preprint: <http://biorxiv.org/content/early/2017/04/19/092999>
