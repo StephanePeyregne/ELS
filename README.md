@@ -48,7 +48,7 @@ Lengths should have the same unit as the distances provided in the last column o
 ```
 In theory, for a region where the outgroup is internal to the population variation, this should be 1 as all chromosomes are derived at this site (if the outgroup was ancestral it would mean it is external to the population variation...) but, in practice, sequencing errors and back mutations could make the outgroup ancestral again so this probability is lower than 1.
 ```
--f [probability of the outgroup being derived in an external region]
+-f [probability of the outgroup being derived in an external region at a fixed derived site]
 ```
 
 * Optional parameters:
@@ -93,6 +93,8 @@ hmm -e config-file -L 10000 -l 1500 -F 0.99 -f 0.95 input > output
 ### Output format
 
 The software returns the input file with 2 or 3 additional columns (depending on the model used). The first additional column takes values of 0,1 and 2 if the probability of the external state or ELS state is above 0.8 at this site (represented as 1 and 2 respectively, 0 otherwise). The two following columns report the probability of the external state and ELS state at this site. The probability of the internal state can be calculated by substracting those probabilities to 1.
+* Format of the log file:
+Each line correspond to a new set of parameters. The first column corresponds to the log likelihood of the data given the model parameters. The following columns are: the proportion of ELS regions (if 3-state model), the average length of internal regions, the average length of external regions, the average length of ELS regions (if 3-state model), the probability of the outgroup being derived in an internal region at a fixed derived site (F parameter), the probability of the outgroup being derived in an external region at a fixed derived site (f parameter), the probability of the outgroup being derived in external regions at a polymorphic site (this should be 0 but it is hard coded as 0.01 to accomodate errors), followed by the probabilities of the outgroup being derived in internal regions at polymorphic sites depending on the number of derived sites in the population from 1 to n-1 (probabilities from the configuration file).
 
 ### Citation
 
