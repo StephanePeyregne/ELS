@@ -32,23 +32,38 @@ Note that this version allow you to run the model on only one chromosome at a ti
 ## List of parameters
 
 ..* Required parameters:
+
 -e path to the configuration file
+
 -L average length of internal regions
+
 -l average length of external regions
+
 Lengths should have the same unit as the distances provided in the last column of the input file. If you use the genetic distance and try to estimate parameters, we did not test the estimation if those parameters were small floating points. Please use a unit of genetic distance that gives orders of magnitude similar to the physical distance (we used nM for humans).
+
 -F probability of the outgroup being Derived in an internal region at a fixed derived site. In theory, for a region where the outgroup is internal to the population variation, this should be 1 as all chromosomes are derived at this site (if the outgroup was ancestral it would mean it is external to the population variation...) but, in practice, sequencing errors and back mutations could make the outgroup ancestral again so this probability is lower than 1.
+
 -f probability of the outgroup being derived in an external region.
 
 ..* Optional parameters:
+
 -S average length of the long external regions potentially representing an event of ELS
+
 -r proportion of external regions that could represent events of ELS
+
 Those two parameters can be used if you want to model explicitely the second type of external regions that are very long and could represent events of selection. They have to be used together if you do so. ALso, both parameters influence each other and, when estimating those parameters, one should not interpret them too much. Under neutral simulations, it happens that the estimated r is not different from 0 if S is similar to the length of neutral external regions.
+
 An advantage of this 3-state model is to be able to use a likelihood ratio test to compare to results obtained with a 2-state model. One can get this likelihood from the log file when estimating parameters (the log likelihood is in the last row, first column of this file).
 
+
 ..* To estimate parameters:
+
 -N followed by the log-likelihood maxima difference under which the estimation converged (this uses the COBYLA algorithm from the nlopt library). This parameter can, for now, only be used for the 3-state model.
+
 -o name of the log file to follow the progression of the parameter estimation
+
 -B similar to -N but makes use of a very naive random search algorithm (can be used for both the 3-state and 2-state models)
+
 
 ## Examples of command line
 
