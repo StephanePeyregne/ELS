@@ -7,7 +7,7 @@ using namespace std;
 
 class hmmResults
 {
-public:
+  public:
     hmmResults();
     vector<double> mfwd_stateE_scaled;
     vector<double> mfwd_stateLE_scaled;
@@ -21,4 +21,3 @@ public:
 };
 
 #endif // HMMRESULTS_H
-

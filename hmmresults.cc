@@ -3,4 +3,3 @@
 hmmResults::hmmResults()
 {
 }
-
