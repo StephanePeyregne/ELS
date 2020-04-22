@@ -1,13 +1,13 @@
 # ELS-hmm — a method to detect ancient sweeps based on a signal of extended lineage sorting
-ELS-hmm is a hidden Markov model that detects long regions in which an outgroup falls outside of the variation of a large number of individuals from another group. The model has been used to detect ancient selective sweeps on the human lineage after the split from archaics by using the Neandertal and Denisovan genome as outgroup genomes. ELS stands for Extended Lineage Sorting.
+ELS-hmm is a hidden Markov model that detects long regions in which an outgroup falls outside of the variation of a large number of individuals from another group. The model has been used to detect ancient selective sweeps on the human lineage after the split from archaics by using the Neandertal and Denisovan genomes as outgroup genomes. ELS stands for Extended Lineage Sorting.
 
 ## Installation
-To compile the software, just type:
+To compile the software, we provide a Makefile that you can run from the command line by typing:
 ```make```
-Note that this is an early release and a more polished and better documented version is currently being prepared for release. The software uses [nlopt](http://ab-initio.mit.edu/wiki/index.php/NLopt) for maximizing the likelihood and a development version needs to be installed to compile ELS-hmm. The software has been tested on Linux.
+The software uses [nlopt](http://ab-initio.mit.edu/wiki/index.php/NLopt) for maximizing the likelihood and a development version needs to be installed to compile ELS-hmm. The software has been tested on Linux.
 
 ## Input Format
-To configurate the emission probabilities that the outgroup individual share the derived allele at a site segregating in the other population, a tab-separated file is required specifying on each line the number of derived alleles in the population followed by the probability:
+To configurate the probabilities (emissions) that the outgroup individual share the derived allele at a polymorphic site in the other population, a tab-separated file is required specifying on each line the number of derived alleles in the population followed by the probability:
 
 Number of derived alleles | Probability of the outgroup to be derived
 ------------------------- | -----------------------------------------
@@ -27,7 +27,7 @@ Chromosome | Physical position | Information field | Total number of chromosomes
 1 | 10056 | site2 | 370 | 20 | A | 56
 1 | 10100 | site3 | 370 | 55 | A | 44
 
-Note that this version allow you to run the model on only one chromosome at a time, do not combine data from different chromosomes into the same input file.
+Note that this version allows you to run the model on only one chromosome at a time, do not combine data from different chromosomes into the same input file.
 
 ## List of parameters
 
@@ -99,4 +99,4 @@ Each line correspond to a new set of parameters. The first column corresponds to
 
 ### Citation
 
-The method is described in the following preprint: <http://biorxiv.org/content/early/2017/04/19/092999>
+The method is described in the following publication: Peyrégne, S., Boyle, M. J., Dannemann, M., & Prüfer, K. (2017). Detecting ancient positive selection in humans using extended lineage sorting. Genome research, 27(9), 1563–1572. https://doi.org/10.1101/gr.219493.116
