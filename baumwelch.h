@@ -1,33 +1,32 @@
 #ifndef BAUMWELCH_H
 #define BAUMWELCH_H
 
+#include <cmath>
 #include <cstdlib>
-#include <vector>
+#include <fstream>
+#include <iostream>
 #include <map>
 #include <sstream>
-#include <iostream>
 #include <string>
-#include <cmath>
-#include <fstream>
+#include <vector>
 
-#include "obsData.h"
-#include "modelprob.h"
 #include "hmmresults.h"
+#include "modelprob.h"
+#include "obsData.h"
 
-using namespace std ;
+using namespace std;
 
 class baumWelch
 {
-    public:
-        baumWelch(obsSequence *data);
-        void computeBaumWelch(hmmResults *results, modelProb *model );
-	void computeBaumWelch3states(hmmResults *results, modelProb *model );
+  public:
+    baumWelch(obsSequence *data);
+    void computeBaumWelch(hmmResults *results, modelProb *model);
+    void computeBaumWelch3states(hmmResults *results, modelProb *model);
 
-    protected:
-            obsSequence *mObsSequence;
-            hmmResults  *mHmmResults;
-            modelProb *mModelProb;
+  protected:
+    obsSequence *mObsSequence;
+    hmmResults *mHmmResults;
+    modelProb *mModelProb;
 };
 
 #endif // BAUMWELCH_H
-
